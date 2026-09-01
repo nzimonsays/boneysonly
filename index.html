@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonyes Only</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --orange:#FB4F14;
+      --navy:#08121f;
+    --navy-2:#0d1b2e;
+    --white:#f5f6f8;
+          --steel:#9aa5b1;
+}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+        background:var(--navy);
+    color:var(--white);
+    font-family:'Oswald', sans-serif;
+    overflow-x:hidden;
+}
+
+  .hero{
+        position:relative;
+    padding:13vh 5vw 8vh;
+    text-align:center;
+    overflow:hidden;
+    background:
+          linear-gradient(135deg, rgba(251,79,20,.14) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 10%, rgba(251,79,20,.12), transparent 45%),
+                  var(--navy);
+}
+  .stripe{
+        position:absolute;
+    background:var(--orange);
+    opacity:.9;
+}
+  .stripe.s1{ width:220%; height:10px; top:6%; left:-60%; transform:rotate(-8deg); opacity:.85;}
+  .stripe.s2{ width:220%; height:4px; top:10%; left:-60%; transform:rotate(-8deg); opacity:.4;}
+
+  h1.headline{
+    position:relative;
+    z-index:2;
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    font-size:clamp(3.2rem, 13vw, 9.5rem);
+    line-height:.92;
+    letter-spacing:.01em;
+    color:var(--white);
+    text-shadow:0 0 60px rgba(251,79,20,.25);
+  }
+  h1.headline .accent{
+    color:var(--orange);
+    -webkit-text-stroke:2px var(--orange);
+  }
+
+  .tagline{
+        position:relative;
+    z-index:2;
+                margin-top:26px;
+    font-family:'Oswald', sans-serif;
+    font-weight:500;
+    letter-spacing:.5em;
+    text-transform:uppercase;
+    font-size:clamp(.85rem, 2vw, 1.25rem);
+    color:var(--steel);
+  }
+  .tagline strong{
+        color:var(--white);
+    font-weight:700;
+  }
+
+  .roster{
+        padding:2vh 5vw 12vh;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+  .cards{
+        display:grid;
+    grid-template-columns:repeat(2, minmax(240px, 1fr));
+    gap:5vw;
+}
+  @media (max-width:680px){
+    .cards{ grid-template-columns:1fr; gap:12vw; }
+}
+
+  .card{
+        position:relative;
+    background:var(--navy-2);
+    border:1px solid rgba(255,255,255,.08);
+    text-align:left;
+    transition:transform .35s ease, box-shadow .35s ease;
+}
+  .card:hover{
+        transform:translateY(-8px);
+    box-shadow:0 24px 50px rgba(0,0,0,.45);
+}
+  .card-corner{
+        position:absolute;
+    top:0; left:0;
+    width:0; height:0;
+    border-top:56px solid var(--orange);
+    border-right:56px solid transparent;
+    z-index:2;
+}
+  .card-corner .num{
+    position:absolute;
+    top:-50px; left:6px;
+    font-family:'Anton', sans-serif;
+    font-size:1.15rem;
+    color:var(--navy);
+}
+  .card-photo{
+        position:relative;
+    width:100%;
+    aspect-ratio:4/5;
+    overflow:hidden;
+    background:#000;
+}
+  .card-photo img{
+        width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    filter:saturate(1.08) contrast(1.05);
+    transition:transform .5s ease;
+}
+  .card:hover .card-photo img{ transform:scale(1.045); }
+  .card-photo::after{
+        content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 55%, rgba(8,18,31,.92) 100%);
+}
+  .card-info{
+        position:relative;
+    padding:18px 20px 22px;
+    border-top:3px solid var(--orange);
+}
+  .card-tag{
+        font-family:'Oswald', sans-serif;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.68rem;
+    color:var(--orange);
+    margin-bottom:6px;
+}
+  .card-name{
+        font-family:'Anton', sans-serif;
+    text-transform:uppercase;
+    font-size:clamp(1.4rem, 3vw, 1.9rem);
+    color:var(--white);
+    letter-spacing:.02em;
+}
+</style>
+  </head>
+  <body>
+
+    <section class="hero">
+      <span class="stripe s1"></span>
+      <span class="stripe s2"></span>
+
+      <h1 class="headline">BONYES<br><span class="accent">ONLY</span></h1>
+      <p class="tagline">Love <strong>&amp;</strong> Football</p>
+    </section>
+
+    <section class="roster">
+      <div class="cards">
+        <div class="card">
+          <div class="card-corner"><span class="num">01</span></div>
+          <div class="card-photo">
+            <img src="images/david.jpg" alt="David">
+          </div>
+          <div class="card-info">
+            <div class="card-name">David</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-corner"><span class="num">14</span></div>
+          <div class="card-photo">
+            <img src="images/sutton.jpg" alt="Cortland Sutton">
+          </div>
+          <div class="card-info">
+            <div class="card-tag">Wide Receiver &middot; Broncos</div>
+            <div class="card-name">Cortland Sutton</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+  </html>
+  
